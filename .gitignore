@@ -1,0 +1,7 @@
+.venv/
+.vercel/
+__pycache__/
+*.pyc
+renders/
+asset-contact-sheet.jpg
+extract_airbnb_links.py

@@ -1,0 +1,22 @@
+{
+  "carolina-house": {
+    "label": "Carolina House",
+    "airbnbListingUrl": "",
+    "icalExportUrl": ""
+  },
+  "carolina-north-side": {
+    "label": "Carolina North Side",
+    "airbnbListingUrl": "",
+    "icalExportUrl": ""
+  },
+  "carolina-south-side": {
+    "label": "Carolina South Side",
+    "airbnbListingUrl": "",
+    "icalExportUrl": ""
+  },
+  "charleston-house": {
+    "label": "Charleston House",
+    "airbnbListingUrl": "",
+    "icalExportUrl": ""
+  }
+}
