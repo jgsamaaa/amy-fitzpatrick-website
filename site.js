@@ -129,6 +129,26 @@
     }
   }
 
+  const testimonials = Array.from(document.querySelectorAll('[data-testimonial]'));
+  if (testimonials.length) {
+    const previous = document.querySelector('[data-testimonial-prev]');
+    const next = document.querySelector('[data-testimonial-next]');
+    const count = document.querySelector('[data-testimonial-count]');
+    let activeTestimonial = 0;
+    const showTestimonial = (index) => {
+      activeTestimonial = (index + testimonials.length) % testimonials.length;
+      testimonials.forEach((testimonial, position) => {
+        const selected = position === activeTestimonial;
+        testimonial.hidden = !selected;
+        testimonial.classList.toggle('active', selected);
+      });
+      if (count) count.textContent = `${String(activeTestimonial + 1).padStart(2, '0')} / ${String(testimonials.length).padStart(2, '0')}`;
+    };
+    previous?.addEventListener('click', () => showTestimonial(activeTestimonial - 1));
+    next?.addEventListener('click', () => showTestimonial(activeTestimonial + 1));
+    showTestimonial(0);
+  }
+
   const galleryButtons = Array.from(document.querySelectorAll('[data-gallery-image]'));
   if (galleryButtons.length) {
     const lightbox = document.createElement('div');
