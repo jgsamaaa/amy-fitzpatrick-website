@@ -129,7 +129,7 @@
 
     @media(max-width:900px){
       .wrap{width:min(100% - 40px,680px)}
-      header{position:absolute}.nav{height:80px;grid-template-columns:1fr auto}.brand-copy,.navlinks{display:none}.nav-cta{font-size:10px}
+      header{position:absolute}.nav{height:80px;grid-template-columns:1fr auto;gap:20px}.brand-copy,.navlinks,.nav-cta{display:none}
       .hero,.hero-grid{min-height:840px}.hero-grid{display:block;padding:150px 0 0}.hero-copy{position:relative;z-index:3;padding:0}.hero-kicker{margin-bottom:20px}h1{font-size:66px;line-height:.86;max-width:520px}.hero-sub{font-size:14px;max-width:380px;margin-bottom:24px}.portrait-stage{position:absolute;inset:auto -60px 0 auto;width:460px;height:560px;opacity:.9}.portrait-arch{right:0;bottom:-70px;width:420px;height:560px}.hero-note{display:none}.hero-index{bottom:24px;gap:16px;font-size:8px}.hero-photo{background-image:linear-gradient(180deg,rgba(11,39,34,.93) 0%,rgba(11,39,34,.72) 46%,rgba(11,39,34,.22) 100%),url('assets/river-marsh.jpg');background-position:center}
       .intro,.featured,.about,.work,.stays,.quote{padding:88px 0}.intro-top,.featured-head,.about-grid,.stays-grid,.quote-grid{grid-template-columns:1fr;gap:32px}.intro-statement{font-size:28px}.paths{margin-top:54px}.path{grid-template-columns:42px 1fr 28px;gap:14px;padding:22px 0}.path p{grid-column:2 / -1}.path h3{font-size:30px}
       .listing-stage{grid-template-columns:1fr;height:auto}.listing-main{height:560px}.listing-side{grid-template-columns:1fr 1fr;grid-template-rows:240px}.listing-card{left:18px;bottom:18px;width:calc(100% - 36px);padding:22px}.listing-card h3{font-size:31px}
@@ -139,7 +139,7 @@
     @media(max-width:560px){
       .wrap{width:calc(100% - 32px)}
       .btn{min-height:46px;padding:0 16px;font-size:10px}
-      .hero,.hero-grid{min-height:790px}.hero-grid{padding-top:128px}h1{font-size:55px;max-width:350px}.hero-sub{max-width:320px;line-height:1.55}.hero-actions{display:grid;width:max-content}.portrait-stage{right:-105px;width:360px;height:480px}.portrait-arch{width:350px;height:490px}.hero-index{display:none}
+      .hero,.hero-grid{min-height:820px}.hero-grid{padding-top:112px}h1{font-size:clamp(48px,15vw,55px);line-height:.9;max-width:340px;margin-bottom:22px}.hero-kicker{gap:12px;margin-bottom:16px;font-size:9px}.hero-kicker span:first-child{width:32px}.hero-sub{max-width:325px;line-height:1.55;margin-bottom:20px}.hero-actions{display:grid;gap:10px;width:min(100%,260px)}.hero-actions .btn{width:100%;justify-content:space-between}.portrait-stage{right:-8px;width:300px;height:390px;opacity:.96}.portrait-arch{right:0;bottom:-36px;width:290px;height:400px}.hero-index{display:none}.hero-photo{background-image:linear-gradient(180deg,rgba(11,39,34,.96) 0%,rgba(11,39,34,.78) 48%,rgba(11,39,34,.28) 100%),url('assets/river-marsh.jpg');background-position:58% center}
       .intro h2,.section-title{font-size:48px}.intro-statement{font-size:25px}.path{grid-template-columns:34px 1fr 22px}.path p{font-size:13px}
       .featured-head{margin-bottom:40px}.listing-main{height:500px}.listing-side{grid-template-rows:180px}.facts{gap:9px;font-size:9px}
       .about-photo{height:510px}.about-copy h2,.stays-copy h2{font-size:49px}.about-copy .lead{font-size:24px}.about-photo::after{width:215px;font-size:17px}
@@ -313,7 +313,13 @@ body.inner-page{background:var(--paper)}
 .form-message{display:none;margin-top:18px;padding:16px;background:var(--mist);font-size:13px}.form-message.show{display:block}
 
 @media(max-width:900px){
-  .menu-toggle{display:block}.navlinks{display:none}.inner-page .nav{grid-template-columns:1fr auto auto;gap:18px}.mobile-panel.open{display:grid;position:absolute;z-index:30;left:0;right:0;top:80px;background:var(--paper);color:var(--ink);padding:22px 20px;border-bottom:1px solid var(--line);gap:12px}.mobile-panel a{font-family:var(--serif);font-size:30px;line-height:1}
+  body.menu-open{overflow:hidden}
+  .menu-toggle{display:flex;align-items:center;justify-content:flex-end;min-width:48px;min-height:48px;position:relative;z-index:31;cursor:pointer}
+  .navlinks{display:none}
+  .inner-page .nav{grid-template-columns:1fr auto;gap:20px}
+  .mobile-panel.open{display:flex;flex-direction:column;position:fixed;z-index:30;left:0;right:0;top:80px;bottom:0;background:var(--paper);color:var(--ink);padding:22px 20px 40px;border-top:1px solid var(--line);overflow-y:auto;overscroll-behavior:contain}
+  .mobile-panel a{display:flex;align-items:center;min-height:58px;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:30px;line-height:1;padding:8px 0}
+  .mobile-panel a:focus-visible{outline:3px solid var(--clay);outline-offset:4px}
   .page-hero{height:auto}.page-hero-grid{grid-template-columns:1fr;min-height:auto;height:auto}.page-hero-copy{padding:76px 40px}.page-hero-media{min-height:520px;height:520px}.page-title{font-size:72px}.page-lead{font-size:25px}
   .section{padding:88px 0}.section-head,.two-col,.contact-grid,.story-grid{grid-template-columns:1fr;gap:42px}.image-frame{min-height:540px}.copy-stack h2{font-size:54px}
   .journey-grid{grid-template-columns:1fr}.journey{min-height:560px}.process-grid{grid-template-columns:1fr 1fr}.booking-grid,.property-grid{grid-template-columns:1fr 1fr}.search-bar{grid-template-columns:1fr 1fr}.search-bar .btn{align-self:end}.integration-note{grid-template-columns:1fr}.detail-heading{grid-template-columns:1fr}.detail-heading h1{font-size:72px}.detail-media{height:620px}.story-nav{position:static}.project-card,.project-card.wide,.project-card.narrow{grid-column:span 6;height:440px}
@@ -432,7 +438,4 @@ body.inner-page{background:var(--paper)}
  .calendar-nav{min-width:44px;min-height:44px}
  .calendar-day{min-height:44px;aspect-ratio:auto}
  .filter-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
-}
-@media(max-width:560px){
- header .nav-cta{display:flex;align-items:center;min-height:44px;padding-bottom:0}
 }

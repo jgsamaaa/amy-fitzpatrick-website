@@ -2,10 +2,56 @@
   const menuButton = document.querySelector('.menu-toggle');
   const mobilePanel = document.querySelector('.mobile-panel');
   if (menuButton && mobilePanel) {
-    menuButton.addEventListener('click', () => {
-      const open = mobilePanel.classList.toggle('open');
+    const pageRegions = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
+    const menuLinks = [...mobilePanel.querySelectorAll('a[href]')];
+
+    const setMenuOpen = (open, restoreFocus = false) => {
+      mobilePanel.classList.toggle('open', open);
       menuButton.setAttribute('aria-expanded', String(open));
       menuButton.textContent = open ? 'Close' : 'Menu';
+      document.body.classList.toggle('menu-open', open);
+      pageRegions.forEach((region) => { region.inert = open; });
+
+      if (open) {
+        requestAnimationFrame(() => menuLinks[0]?.focus());
+      } else if (restoreFocus) {
+        menuButton.focus();
+      }
+    };
+
+    menuButton.addEventListener('click', () => {
+      setMenuOpen(!mobilePanel.classList.contains('open'));
+    });
+
+    mobilePanel.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!mobilePanel.classList.contains('open')) return;
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setMenuOpen(false, true);
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+      const focusable = [menuButton, ...menuLinks];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    const desktopQuery = window.matchMedia('(min-width: 901px)');
+    desktopQuery.addEventListener('change', (event) => {
+      if (event.matches) setMenuOpen(false);
     });
   }
 
