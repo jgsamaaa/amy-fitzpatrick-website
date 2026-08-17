@@ -202,7 +202,7 @@
     lightbox.setAttribute('role', 'dialog');
     lightbox.setAttribute('aria-modal', 'true');
     lightbox.setAttribute('aria-label', 'Property photo viewer');
-    lightbox.innerHTML = '<span class="stay-lightbox-count"></span><button class="stay-lightbox-close" type="button">Close</button><button class="stay-lightbox-nav stay-lightbox-prev" type="button" aria-label="Previous photo">←</button><figure class="stay-lightbox-figure"><img class="stay-lightbox-image" alt=""><figcaption class="stay-lightbox-caption"></figcaption></figure><button class="stay-lightbox-nav stay-lightbox-next" type="button" aria-label="Next photo">→</button>';
+    lightbox.innerHTML = '<span class="stay-lightbox-count"></span><button class="stay-lightbox-close" type="button">Close</button><button class="stay-lightbox-nav stay-lightbox-prev" type="button" aria-label="Previous photo"><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg></button><figure class="stay-lightbox-figure"><img class="stay-lightbox-image" alt=""><figcaption class="stay-lightbox-caption"></figcaption></figure><button class="stay-lightbox-nav stay-lightbox-next" type="button" aria-label="Next photo"><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>';
     document.body.appendChild(lightbox);
     const image = lightbox.querySelector('.stay-lightbox-image');
     const caption = lightbox.querySelector('.stay-lightbox-caption');
