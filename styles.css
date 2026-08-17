@@ -275,6 +275,8 @@ body.inner-page{background:var(--paper)}
 .stay-entry-media{height:610px;overflow:hidden;position:relative}
 .stay-entry-copy h2{font-family:var(--serif);font-size:60px;line-height:.96;font-weight:400;margin:12px 0 22px}
 .stay-entry-copy p{font-size:14px;color:rgba(23,53,47,.7)}
+.stay-entry-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.stay-entry-actions .btn{margin:0}
 .stay-facts{display:flex;gap:18px;flex-wrap:wrap;padding:18px 0;margin:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
 .calendar-shell{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;background:var(--paper);padding:26px;border:1px solid var(--line)}
 .calendar{border:1px solid var(--line);padding:22px}
