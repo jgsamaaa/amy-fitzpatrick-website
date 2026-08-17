@@ -1,0 +1,11 @@
+.git/
+.venv/
+.vercel/
+renders/
+__pycache__/
+*.pyc
+asset-contact-sheet.jpg
+qa_site.py
+render.py
+extract_airbnb_links.py
+design-audit-and-site-plan.md
