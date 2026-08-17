@@ -1,3 +1,7 @@
+@font-face{font-family:"Cormorant Garamond";src:url("assets/fonts/cormorant-garamond-regular.woff2") format("woff2");font-style:normal;font-weight:400 500;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url("assets/fonts/cormorant-garamond-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url("assets/fonts/manrope.woff2") format("woff2");font-style:normal;font-weight:400 600;font-display:swap}
+
     :root{
       --ink:#17352f;
       --deep:#0e2824;
@@ -418,4 +422,17 @@ body.inner-page{background:var(--paper)}
 }
 @media(max-width:560px){
  .testimonials{padding:82px 0}.testimonials-grid{gap:48px}.testimonials-intro h2{font-size:52px}.testimonial-card blockquote{font-size:28px;line-height:1.28}.testimonial-meta{display:grid;gap:8px}.testimonial-stars{margin-bottom:26px}
+}
+
+
+/* Responsive touch-target hardening */
+@media(max-width:900px){
+ .menu-toggle{min-width:44px;min-height:44px;padding:10px 8px}
+ .mobile-panel a{display:flex;align-items:center;min-height:44px}
+ .calendar-nav{min-width:44px;min-height:44px}
+ .calendar-day{min-height:44px;aspect-ratio:auto}
+ .filter-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
+}
+@media(max-width:560px){
+ header .nav-cta{display:flex;align-items:center;min-height:44px;padding-bottom:0}
 }
